@@ -62,7 +62,9 @@ const customer_secret=process.env.customer_secret;
 app.get("/", (req,res)=>{
     res.sendFile(path.join(__dirname,"view","landing.html"))
 })
-
+app.get("/cart2", (req,res)=>{
+    res.sendFile(path.join(__dirname,"view","cart.html"))
+})
 //fetching user data and daraja token api key
 app.post("/contact", async (req,res)=>{
     const contact= req.body.contact    
