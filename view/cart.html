@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <div class="header">
+        <h4>FoodPorlour</h4>       
+    </div>
+
+    <div class="body">
+        <a href="/landing">Shop</a>
+        <div class="cart">
+            <h4>Your Cart</h4>
+            <div class="products" id="cart"></div> 
+
+            <div class="cashout">
+                <button id="pop-up_button">Total CashOut: Ksh:<span id="cashout">0</span></button> 
+            </div>
+            <div class="address">
+                <label for="">Delivery Location*</label>
+                <input type="text" name="" id="delivery_location" placeholder="Enter your complete deliver Address" required>
+            </div>
+            <div class="order">
+                <button id="place_ordered_btn">place an order</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="order_confirmation" id="order_confirmation">
+        <p>Your order</p>
+        <div id="customers_order">
+            <!--Order appear-->
+        </div>
+        <button>Confirm Your Order</button>
+    </div>
+
+    <div>
+        <p>Mpesa Payment</p>
+        <span>+254</span><input type="number" name="" id="" placeholder="enter mpesa phone number"> <br><br>
+        <button>Mpesa prompt</button>
+        <!--It will load then display the below information-->
+    </div>  
+    
+    <div>
+        <p>Payment Confirmed</p>
+        <p>You have successfully placed an order</p>
+        <button>ok</button>
+    </div>
+
+    <div>
+        <p>Payment cancelled</p>
+        <p>You entererd wrong mpesa pin or did not enter pin</p>
+        <div>
+            <button>prompt</button>
+            <button>cancel </button>
+        </div>
+    </div>
+    <script src="ecommerce/customers/cart.js"></script>
+</body>
+</html>

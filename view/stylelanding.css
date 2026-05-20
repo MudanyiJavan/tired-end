@@ -1,0 +1,47 @@
+body{    
+    height: 100%;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 1.125rem;
+    margin: 0;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF4F00;
+    height: 8%;
+    color: white;
+    padding: 7px;
+
+}
+.header a{
+    color: white;
+}
+.products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    height: 80%;
+}
+.products .product{
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+.product button{
+    background-color: #FF4F00;
+    border-radius: 5px;
+    border: 1px solid white;
+    color: white;
+    padding: 7px;
+}
+.footer{
+    background-color: #FF4F00;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}

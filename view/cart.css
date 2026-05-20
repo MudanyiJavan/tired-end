@@ -1,0 +1,86 @@
+body{    
+    height: 100%;
+}
+.header{
+    background-color: #FF4F00;
+    padding: 7px;
+
+
+}
+.body a{
+    padding: 10px 0 10px 0;
+}
+.cart{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.1)
+}
+
+.products{
+    display: flex;
+    flex-direction: column;      
+    padding: 7px;
+}
+.product{
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    align-items: center;
+}
+.cashout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cashout button{
+    padding: 8px;
+}   
+
+.address{
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+}
+.address label{
+    padding: 5px;
+}
+.address input{
+    padding: 7px;
+    border: 1px solid green;
+    border-radius: 10px;
+}
+.order{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.order button{
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    padding: 10px;
+    border-radius: 8px;
+    border: 0;
+    color: white;
+
+}
+.order_confirmation{
+    display: none;
+    position: fixed;
+    top: 50%;    
+    right: 5%;
+    transform: translate(-50%, -50%);
+    width: 90%;          /* Looks great on mobile phones */
+    max-width: 450px;
+    background-color: white;
+    padding: 5px;    
+    flex-direction: column;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 
+                0 5px 15px rgba(0, 0, 0, 0.15);
+
+}
