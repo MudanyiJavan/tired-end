@@ -1,0 +1,42 @@
+body{
+    background-color: orange;
+}
+#products{
+ display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Smaller gap for mobile */
+  padding: 10px;
+  justify-content: center;
+}
+
+ .product{
+  /* Calculate width: 50% minus half of the gap */
+  flex: 0 0 calc(50% - 5px); 
+  
+  /* Reset for desktop (3 or 4 columns) using a Media Query */
+  background: white;
+  border-radius: 8px;
+  box-sizing: border-box; /* Crucial: includes padding/border in the width */
+}
+
+
+/* Tablet and Desktop adjustments */
+@media (min-width: 768px) {
+  .product{
+    flex: 0 0 calc(33.33% - 10px); /* 3 columns on tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .product{
+    flex: 0 0 calc(25% - 10px); /* 4 columns on desktop */
+  }
+}
+
+#cart-products{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Smaller gap for mobile */
+  padding: 10px;
+  justify-content: center;
+}

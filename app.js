@@ -60,7 +60,7 @@ const customer_secret=process.env.customer_secret;
     }
     
 app.get("/", (req,res)=>{
-    res.sendFile(path.join(__dirname,"view","app.html"))
+    res.sendFile(path.join(__dirname,"view","superAdmin.html"))
 })
 
 //fetching user data and daraja token api key
