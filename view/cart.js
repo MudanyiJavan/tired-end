@@ -52,7 +52,7 @@ async function display_cart_products(params) {
     payment_div.style.display="none"
 
 }
-display_cart_products()
+display_cart_products()// displaying products on the page
 
 document.addEventListener("click", (e)=>{
     let clicked_button= e.target
@@ -254,8 +254,7 @@ function pay(){
     const prompt_btn = document.getElementById("button")
     prompt_btn.addEventListener("click", prompt)
 }   
- async function prompt(){
-
+async function prompt(){
     const code = document.getElementById("code")
     const contact = document.getElementById("contact")
     const btn = document.getElementById("button")
@@ -263,7 +262,6 @@ function pay(){
     const loading = document.getElementById("loading")
 
     const phone = code.value + contact.value.trim();
-
     // Show loading indicator
     loading.style.display = "block";
 
