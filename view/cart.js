@@ -46,8 +46,8 @@ async function display_cart_products(params) {
 
         cart_products_div.appendChild(main_product_div)
     });
-
-    
+    let order_confirmation_div=document.getElementById("order_confirmation")
+    order_confirmation_div.style.display= "none"
 }
 display_cart_products()
 
