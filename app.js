@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const {MongoClient, ObjectId}= require("mongodb") // const {MongoClient}= require("mongodb")
 
-const url2 =process.env.MONGODB_URI2
+const url2 ="mongodb+srv://mudanyi:2024Japheth@nairobi-kioski.moxtnys.mongodb.net/?appName=Nairobi-kioski"
 const client = new MongoClient(url2);
 
 app.use(express.urlencoded({ extended: true }));
