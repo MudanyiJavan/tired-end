@@ -6,7 +6,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 const {MongoClient, ObjectId}= require("mongodb") // const {MongoClient}= require("mongodb")
 
-const url2 ="mongodb+srv://mudanyi:mudanyi:2024Japheth@nairobi-kioski.moxtnys.mongodb.net/?appName=Nairobi-kioski"
+const url2 ="mongodb+srv://mudanyi:2024Japheth@nairobi-kioski.moxtnys.mongodb.net/?appName=Nairobi-kioski"
+const client = new MongoClient(url2);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -231,7 +232,7 @@ app.get("/order", async(req, res)=>{
 //usefull checker
 app.get("/check-types", async (req, res) => {
     try {
-        const collection = req.db.collection("");
+        const collection = req.db.collection("cart");
 
         // Find documents where Qty is a string OR price is a string
         const brokenDocuments = await collection.find({
