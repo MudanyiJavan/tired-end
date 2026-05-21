@@ -47,7 +47,10 @@ async function display_cart_products(params) {
         cart_products_div.appendChild(main_product_div)
     });
     let order_confirmation_div=document.getElementById("order_confirmation")
+    let payment_div = document.getElementById("payment-div")
     order_confirmation_div.style.display= "none"
+    payment_div.style.display="none"
+
 }
 display_cart_products()
 
@@ -230,4 +233,60 @@ async function displaying_order(result) {
         </div>
     `;
     order_div.appendChild(orderFooter);
+
+    const cancel_btn = document.getElementById("cancel-btn")
+    const pay_btn = document.getElementById("pay-btn")
+
+    cancel_btn.addEventListener("click", cancel)
+    pay_btn.addEventListener("click", pay)
+
 }
+
+function cancel(){
+    const confirmation_div= document.getElementById("order_confirmation")
+    confirmation_div.style.display="none"
+}
+function pay(){
+    document.getElementById("order_confirmation").style.display = "none";
+    const pay_ment= document.getElementById("payment-div")
+    pay_ment.style.display="flex"
+    
+    const prompt_btn = document.getElementById("button")
+    prompt_btn.addEventListener("click", prompt)
+}   
+ async function prompt(){
+
+    const code = document.getElementById("code")
+    const contact = document.getElementById("contact")
+    const btn = document.getElementById("button")
+    const progress = document.getElementById("progress")
+    const loading = document.getElementById("loading")
+
+    const phone = code.value + contact.value.trim();
+
+    // Show loading indicator
+    loading.style.display = "block";
+
+    async function payment() {
+        try {
+            const fetchdata = await fetch("/contact", {
+                method: "POST",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify({ contact: phone })
+            });
+            const response = await fetchdata.json();
+
+            // Show backend response
+            progress.textContent = response;
+        } catch (err) {
+            progress.textContent = "Error: " + err.message;
+        } finally {
+            // Hide loading indicator
+            loading.style.display = "none";
+        }
+    }
+
+    payment();
+    contact.value = "";
+}
+ 

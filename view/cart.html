@@ -37,18 +37,30 @@
             <!--Order appear-->
         </div>
         <div class="modal-actions">
-            <button class="cancel-confirm-btn">Cancel</button>
-            <button class="pay-confirm-btn">Pay</button>
+            <button class="cancel-confirm-btn" id="cancel-btn">Cancel</button>
+            <button class="pay-confirm-btn" id="pay-btn">Pay</button>
         </div>
-
     </div>
 
-    <div>
-        <p>Mpesa Payment</p>
-        <span>+254</span><input type="number" name="" id="" placeholder="enter mpesa phone number"> <br><br>
-        <button>Mpesa prompt</button>
-        <!--It will load then display the below information-->
-    </div>  
+<div class="content" id="payment-div">
+    <div class="payment">
+        <h3>Safaricom MPESA</h3>        
+        
+        <!-- Beautifully wraps dropdown and input side-by-side -->
+        <div class="phone-input-group">
+            <select name="code" id="code">
+                <option value="254">+254</option>
+            </select>        
+            <input type="number" placeholder="712345678" id="contact" required>
+        </div>
+        
+        <button type="button" id="button">Request STK Push</button>
+        <p id="progress"></p>
+    </div> 
+    <div id="loading">Processing Payment...</div>
+</div>
+    
+
     
     <div>
         <p>Payment Confirmed</p>
