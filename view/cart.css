@@ -172,20 +172,55 @@ body{
     color: #111111;
 }
 
-/* Action Button */
-.confirm-btn {
-    margin-top: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px;
+/* Container for the two buttons */
+.modal-actions {
+    display: flex;
+    gap: 12px;           /* Puts clean spacing between the buttons */
+    margin-top: 24px;
+    width: 100%;
+}
+
+/* Base style for both buttons */
+.cancel-confirm-btn, 
+.pay-confirm-btn {
+    flex: 1;             /* Forces both buttons to be equal width */
+    padding: 14px;
     border-radius: 8px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    border: none;
+    transition: all 0.2s ease;
 }
 
-.confirm-btn:hover {
-    background-color: #0056b3;
+/* Primary Action: Pay Button */
+.pay-confirm-btn {
+    background-color: #2ec4b6; /* Clean, modern payment green */
+    color: white;
+}
+
+.pay-confirm-btn:hover {
+    background-color: #24a195;
+    transform: translateY(-1px); /* Slight lift effect */
+}
+
+/* Secondary Action: Cancel Button */
+.cancel-confirm-btn {
+    background-color: #f5f5f7;  /* Soft grey neutral background */
+    color: #444444;
+}
+
+.cancel-confirm-btn:hover {
+    background-color: #e8e8ed;
+    color: #111111;
+}
+
+/* Fixing the header paragraph title style */
+.modal-title {
+    margin-top: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 12px;
 }
