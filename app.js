@@ -7,7 +7,7 @@ dotenv.config();
 const {MongoClient, ObjectId}= require("mongodb") // const {MongoClient}= require("mongodb")
 
 const url2 ="mongodb+srv://mudanyi:2024Japheth@nairobi-kioski.moxtnys.mongodb.net/?appName=Nairobi-kioski"
-const client = new MongoClient(url);
+const client = new MongoClient(url2);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -272,8 +272,8 @@ const timestamp = getFormattedTimestamp();
 console.log(timestamp);
 //fetching api credentials
 process.env.NODE_OPTIONS = "--dns-result-order=ipv4first";
-const consumer_key="PdqfJHYTvcAQ54i4u2BUPf82Sft1G2IoxnmvG2FF83DUsHEd"
-const customer_secret="I7ohmfaFUYg4BrCzop79gjXqddAhGBzNFdH5KoCRhWxLT4lkylBEGIWJAEWM8HRO";
+const consumer_key=process.env.consumer_key;
+const customer_secret=process.env.customer_secret;
 console.log("consumer_key:", consumer_key);
 console.log("customer_secret:", customer_secret);
 //token
