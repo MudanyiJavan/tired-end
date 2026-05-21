@@ -5,8 +5,8 @@ const port = 5000;
 const dotenv = require('dotenv');
 dotenv.config();
 const {MongoClient, ObjectId}= require("mongodb") // const {MongoClient}= require("mongodb")
-
-const url2 ="mongodb+srv://mudanyi:2024Japheth@nairobi-kioski.moxtnys.mongodb.net/?appName=Nairobi-kioski"
+const url= process.env.MONGODB_URI
+const url2 =process.env.MONGODB_URI2
 const client = new MongoClient(url2);
 
 app.use(express.urlencoded({ extended: true }));
@@ -189,7 +189,7 @@ app.get("/cart", async(req, res)=>{
         const collection =req.db.collection("cart")
         //await collection.deleteMany({});
         const cartData = await collection.find().toArray()
-       console.log(cartData)
+       //console.log(cartData)
         res.json(cartData);
     } catch (error) {
         console.log(error.message)
@@ -253,22 +253,6 @@ app.get("/check-types", async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //timestamp

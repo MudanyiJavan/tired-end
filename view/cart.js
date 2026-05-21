@@ -181,48 +181,53 @@ place_ordered_btn.addEventListener("click", async()=>{
     }
 })
 
+
 async function displaying_order(result) {
-    const order_div= document.getElementById("customers_order")   
+    const order_div = document.getElementById("customers_order");   
     order_div.innerHTML = "";
 
-    const order_id_p= document.createElement("p")
-    const order_id= document.createElement("p")
+    // 1. Order ID Header
+    const orderHeader = document.createElement("div");
+    orderHeader.className = "order-header";
+    orderHeader.innerHTML = `
+        <span class="label">Order ID:</span>
+        <span class="value">${result._id}</span>
+    `;
+    order_div.appendChild(orderHeader);
 
-    order_id_p.innerHTML="OrderID"
-    order_id.innerHTML = result._id
+    // 2. Items List Header
+    const h4 = document.createElement("h4");
+    h4.innerText = "Items";
+    order_div.appendChild(h4);
 
-    order_div.appendChild(order_id_p)
-    order_div.appendChild(order_id)
-    const h4= document.createElement("h4")
-    h4.innerHTML= "Items:"
-    order_div.appendChild(h4)
-
+    // 3. Loop through items with a single structured template row
     result.items.forEach(element => {
-        const product_name= document.createElement("p")
-        const product_price= document.createElement("p")
-        const product_qty = document.createElement("p")
+        const itemRow = document.createElement("div");
+        itemRow.className = "item-row";
         
-
-        product_name.innerHTML= element.product
-        product_price.innerHTML= element.price
-        product_qty.innerHTML= element.Qty
-        
-
-        order_div.appendChild(product_name)
-        order_div.appendChild(product_price)
-        order_div.appendChild(product_qty)        
+        itemRow.innerHTML = `
+            <div class="item-main">
+                <span class="product-name">${element.product}</span>
+                <span class="product-qty">x${element.Qty}</span>
+            </div>
+            <span class="product-price">Ksh.${element.price}</span>
+        `;
+        order_div.appendChild(itemRow);
     });
-    const total_Amount= document.createElement("p")
-    const order_location= document.createElement("p")    
 
-    total_Amount.innerHTML=result.total_Amount
-    order_location.innerHTML = result.location
-    
-
-    order_div.appendChild(total_Amount);
-    order_div.appendChild(order_location)
-    
-
+    // 4. Footer summary (Total & Location)
+    const orderFooter = document.createElement("div");
+    orderFooter.className = "order-footer";
+    orderFooter.innerHTML = `
+        <div class="footer-row">
+            <span class="label">Delivery Location:</span>
+            <span class="value">${result.location}</span>
+        </div>
+        <hr />
+        <div class="footer-row total-row">
+            <span class="label">Total Amount:</span>
+            <span class="value">Ksh.${result.total_Amount}</span>
+        </div>
+    `;
+    order_div.appendChild(orderFooter);
 }
-
-
